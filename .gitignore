@@ -3,7 +3,7 @@ wp-admin
 wp-content/languages/*
 wp-content/plugins/*
 wp-content/themes/storefront
-wp-content/themes/undestrap
+wp-content/themes/storefront-child/node_modules/
 wp-snapshots/
 wp-includes/
 wp-*.php
