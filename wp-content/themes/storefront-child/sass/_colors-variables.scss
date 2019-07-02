@@ -1,0 +1,49 @@
+$c-black: #000000;
+$c-white: #ffffff;
+$c-pink: #f27bfa;
+$c-green: #4bbf5a;
+$c-gray-light: #d2d2d269;
+$c-gray-dark: #C0C0C0;
+$c-gray: #d2d2d2;
+
+/* Menu Variables */
+$color-link: #FFF;
+$button-height: 27px;
+$button-width: 35px;
+
+/* background-colors */
+.bg-black{
+  background-color: $c-black;
+}
+
+.bg-pink{
+  background-color: $c-pink;
+}
+
+.bg-white{
+  background-color: $c-white;
+}
+
+/* Font Colors */
+.c-white{
+  color: $c-white;
+}
+
+.c-black{
+  color: $c-black;
+}
+
+.c-pink{
+  color: $c-pink;
+}
+
+.c-green{
+  color: $c-green;
+}
+
+/* Responsive Variables */
+$screen-xs-min: 320px;
+$screen-xs-max: 450px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;

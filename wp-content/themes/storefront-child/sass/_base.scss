@@ -1,0 +1,165 @@
+$size: .8em;
+$foreground-color: $c-black;
+$background-color: #f2f2f2;
+
+::-webkit-scrollbar {
+  width:  $size;
+  height: $size;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $foreground-color;
+  @include border-radius(20px);
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+  @include border-radius(20px);
+}
+
+// For Internet Explorer
+
+body{
+  overflow-x: hidden;
+  font-family: $ff-default;
+  scrollbar-face-color: $foreground-color;
+  scrollbar-track-color: $background-color;
+
+  #loader{
+    display: none;
+    z-index: 9999;
+  }
+
+  .bg-overlay{
+    opacity: 0.8;
+    background-color: $c-black;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+
+    #loader{
+      opacity: 1;
+      display: block;
+    }
+  }
+
+  &.loading{
+    .bg-overlay{
+      display: inherit;
+    }
+  }
+}
+
+a{
+  outline: none !important;
+  text-decoration: none !important;
+  @extend .trans;
+  color: $c-black;
+
+  &:hover{
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+}
+
+.m-t-10{
+  margin-top: 10px;
+}
+
+.m-b-10{
+  margin-bottom: 10px;
+}
+
+.bold{
+  font-weight: 700 !important;
+}
+
+.content-site {
+  padding: 50px 0 0;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.content-page{
+  margin-top: 130px;
+}
+
+.tooltip {
+  font-family: $ff-default;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  /* ... */
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.added_to_cart.wc-forward{
+  display: none;
+}
+
+//.zoom-img{
+//  transition: transform .2s; /* Animation */
+//  overflow: hidden;
+//  &:hover{
+//    transform: scale(1.5);
+//  }
+//}
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10vmin;
+  margin-top: -10vmin;
+  height: 10vmin;
+  width: 10vmin;
+  border-radius: 50%;
+  border: 0.5vmin solid $c-pink;
+  border-top-color: $c-black;
+
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 320px) {
+
+  .wrapper{
+    padding: 120px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .wrapper{
+    padding: 30px 0;
+  }
+}

@@ -1,0 +1,27 @@
+.title-section{
+  font-size: 2em;
+  margin-bottom: 50px;
+  display: block;
+  position: relative;
+
+  &:before{
+    margin: 22px 0 0 -120px;
+  }
+
+  &:after{
+    margin: 22px 0 0 20px;
+  }
+
+  &:before,
+  &:after{
+    content: '';
+    width: 100px;
+    height: 1px;
+    background-color: $c-gray-light;
+    position: absolute;
+  }
+}
+
+.entry-header{
+  padding: 0 0 30px;
+}
