@@ -1,0 +1,15 @@
+html
+wp-admin
+wp-content/languages/*
+wp-content/plugins/*
+wp-content/themes/storefront
+wp-content/themes/undestrap
+wp-snapshots/
+wp-includes/
+wp-*.php
+xmlrpc.php
+.idea/
+.htaccess
+fix-wordpress-permissions.sh
+index.php
+readme.html
