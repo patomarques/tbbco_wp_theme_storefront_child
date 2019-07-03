@@ -108,3 +108,6 @@ function iconic_cart_count_fragments_custom( $fragments ) {
     return $fragments;
 
 }
+
+function hide_admin_bar(){ return false; }
+add_filter( 'show_admin_bar', 'hide_admin_bar' );
