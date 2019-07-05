@@ -6,6 +6,9 @@ $c-gray-light: #d2d2d269;
 $c-gray-dark: #C0C0C0;
 $c-gray: #d2d2d2;
 
+$c-grafiti: #323232;
+$c-gray-f7: #b2b2b2;
+
 /* Menu Variables */
 $color-link: #FFF;
 $button-height: 27px;
@@ -17,7 +20,7 @@ $button-width: 35px;
 }
 
 .bg-pink{
-  background-color: $c-pink;
+  background-color: $c-gray-f7;
 }
 
 .bg-white{
@@ -34,7 +37,7 @@ $button-width: 35px;
 }
 
 .c-pink{
-  color: $c-pink;
+  color: $c-gray-f7;
 }
 
 .c-green{

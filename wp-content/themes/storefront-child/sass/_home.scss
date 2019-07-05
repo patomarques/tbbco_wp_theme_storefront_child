@@ -5,14 +5,12 @@
 .flex-grid{
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(2, 250px);
-  grid-gap: 8px;
-  margin-bottom: 30px;
+  grid-template-rows: repeat(2, 350px);
+  grid-gap: 20px;
 
   .box-internal{
     grid-column-start: 1;
     grid-column-end: 6;
-    max-height: 250px;
     overflow: hidden;
     background-color: $c-black;
     color: $c-white;
@@ -40,6 +38,7 @@
       grid-column-start: 6;
       grid-column-end: 11;
     }
+
     &:nth-child(1){
       grid-column-start: 1;
       grid-column-end: 7;
@@ -90,4 +89,112 @@
   #wds_container1_0 #wds_container2_0 .wds_right_btn_cont {
     font-size: 100px !important;
   }
+}
+
+@media (min-width: 320px) {
+
+  .flex-grid  {
+    grid-template-rows: repeat(3, 250px);
+
+    .box-internal{
+      img{
+        position: relative;
+        min-height: 100%;
+        width: auto;
+      }
+
+      &:nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 12;
+        grid-row-start: 1;
+        grid-row-end: 1;
+      }
+
+      &:nth-child(2){
+        grid-column-start: 1;
+        grid-column-end: 12;
+        grid-row-start: 2;
+        grid-row-end: 2;
+      }
+
+      &:nth-child(3){
+        grid-column-start: 1;
+        grid-column-end: 12;
+        grid-row-start: 3;
+        grid-row-end: 3;
+      }
+    }
+  }
+}
+
+@media (min-width: 425px) {
+
+  .flex-grid  {
+    grid-template-rows: repeat(3, 320px);
+
+    .box-internal{
+      height: 320px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .flex-grid  {
+    grid-template-rows: repeat(1, 280px);
+    grid-gap: 10px;
+
+    .box-internal{
+
+      &:nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        min-height: 100%;
+      }
+
+      &:nth-child(2){
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+
+      &:nth-child(3){
+        grid-row-start: 2;
+        grid-row-end: 2;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3){
+        grid-column-start: 6;
+        grid-column-end: 11;
+        height: 280px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+
+  .flex-grid  {
+    grid-template-rows: repeat(1, 320px);
+    grid-gap: 10px;
+
+    .box-internal{
+
+      &:nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 7;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3){
+        grid-column-start: 7;
+        grid-column-end: 11;
+        height: 320px !important;
+      }
+    }
+  }
+
+
 }

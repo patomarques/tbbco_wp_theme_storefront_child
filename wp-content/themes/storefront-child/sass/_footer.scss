@@ -84,7 +84,7 @@
     &:nth-child(even){
       .link{
         &:hover{
-          color: $c-pink;
+          color: $c-gray-f7;
         }
       }
     }
@@ -104,7 +104,7 @@
     &:nth-child(odd){
       a{
         &:hover{
-          color: $c-pink;
+          color: $c-gray-f7;
         }
       }
     }

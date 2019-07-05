@@ -18,7 +18,6 @@ $background-color: #f2f2f2;
 }
 
 // For Internet Explorer
-
 body{
   overflow-x: hidden;
   font-family: $ff-default;
@@ -31,7 +30,7 @@ body{
   }
 
   .bg-overlay{
-    opacity: 0.8;
+    opacity: 1;
     background-color: $c-black;
     z-index: 9998;
     width: 100%;
@@ -62,7 +61,6 @@ a{
     opacity: 0.8;
     cursor: pointer;
   }
-
 }
 
 .m-t-10{
@@ -135,7 +133,7 @@ a{
   height: 10vmin;
   width: 10vmin;
   border-radius: 50%;
-  border: 0.5vmin solid $c-pink;
+  border: 0.5vmin solid $c-gray;
   border-top-color: $c-black;
 
   animation: spin 2s infinite linear;
