@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Storefront automatically loads the core CSS even if using a child theme as it is more efficient
  * than @importing it in the child theme style.css file.
@@ -21,7 +20,6 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
-
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_custom',  999);
 function theme_enqueue_styles_custom() {
 
@@ -32,23 +30,24 @@ function theme_enqueue_styles_custom() {
     wp_enqueue_style( 'bootstrap-grid-styles', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap-grid.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'bootstrap-reboot-styles', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap-reboot.css', array(), $the_theme->get( 'Version' ) );
 
+    wp_enqueue_style( 'owl-styles', get_stylesheet_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', array(), array());
+    wp_enqueue_style( 'owl-themes-styles', get_stylesheet_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.theme.default.css', array(), array());
     wp_enqueue_style( 'fontawesome-styles', get_stylesheet_directory_uri() . '/node_modules/@fortawesome/fontawesome-free/css/all.css', array(), array());
 
     wp_enqueue_style( 'tbbc-styles', get_stylesheet_directory_uri() . '/sass/tbbc.css', array(), $the_theme->get( 'Version' ) );
 
+    wp_enqueue_script( 'owl.js-scripts', get_stylesheet_directory_uri() . '/node_modules/owl.carousel/dist/owl.carousel.min.js', array(), array(), true );
     wp_enqueue_script( 'popper-scripts', get_stylesheet_directory_uri() . '/node_modules/popper.js/dist/umd/popper.min.js', array(), array(), true );
     wp_enqueue_script( 'bootstrap-bundle-scripts', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.js', array(), array(), true );
     wp_enqueue_script( 'bootstrap-scripts', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array(), array(), true );
-
 
     wp_enqueue_script( 'tbbc-scripts', get_stylesheet_directory_uri() . '/js/tbbc.js', array(), $the_theme->get( 'Version' ), true );
 }
 
 function shs_remove_actions_parent_theme() {
-    remove_action('homepage', 'storefront_homepage_content', 10); // doesnt work
+    remove_action('homepage', 'storefront_homepage_content', 10);
 };
 add_action( 'init', 'shs_remove_actions_parent_theme', 1);
-
 
 function add_child_theme_textdomain_custom() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
@@ -95,7 +94,7 @@ add_filter( 'woocommerce_product_add_to_cart_text', 'woo_custom_product_add_to_c
 
 function woo_custom_product_add_to_cart_text_custom() {
 
-    return __( 'Adicionar a sacola', 'woocommerce' );
+    return __( 'Comprar', 'woocommerce' );
 
 }
 
@@ -111,3 +110,38 @@ function iconic_cart_count_fragments_custom( $fragments ) {
 
 function hide_admin_bar(){ return false; }
 add_filter( 'show_admin_bar', 'hide_admin_bar' );
+
+function create_posttype() {
+
+    register_post_type( 'slider_home',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Slider (Home)' ),
+                'singular_name' => __( 'Slider Home' )
+            ),
+            'menu_position'       => 1,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'slider_home'),
+            'supports' => array('title', 'thumbnail')
+        )
+    );
+
+    register_post_type( 'mosaico_home',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Mosaico (Home)' ),
+                'singular_name' => __( 'Mosaico Home' )
+            ),
+            'menu_position'       => 5,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'mosaico_home'),
+            'supports' => array('title', 'thumbnail')
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
