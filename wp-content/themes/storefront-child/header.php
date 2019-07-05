@@ -25,16 +25,38 @@
 </div>
 
 <?php if( is_front_page() ){ ?>
-  <div class="banner-home">
+
+  <?php
+    $args = array(
+        'post_type' => 'slider_home',
+        'stock' => 1,
+        'posts_per_page' => 12,
+        'orderby' =>'rand',
+        'order' => 'rand' );
+    $slider_home = new WP_Query( $args );
+  ?>
+
+  <div class="banner-home ">
+    <div id="owl-demo" class="owl-carousel owl-theme">
+
+      <?php while ( $slider_home->have_posts() ) : $slider_home->the_post();  ?>
+
+          <div class="item"><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt=""></div>
+
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+
+    </div>
+
     <a class="logo" href="<?php echo get_site_url(); ?>">
       <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-1.png" alt="" class="logo-banner img-responsive">
     </a>
-      <?php if( function_exists('wd_slider') ) { wd_slider(1); } ?>
+
   </div>
 <?php } ?>
 
 <header id="menu-top" class="menu-top <?php if( !is_front_page() ){ echo 'menu-fixed'; }else{ echo ""; } ?>">
-  <div class="top-bar bg-black">
+  <div class="top-bar bg-black d-none d-none-sm">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -43,22 +65,22 @@
       </div>
     </div>
   </div>
-  <div class="container-full bg-white header-container">
+  <div class="container-full bg-black header-container">
     <div class="container">
       <div class="row">
-        <div class="col-4 col-sm-3 col-md-3 order-2 order-sm-1 content-menu">
+        <div class="col-3 col-sm-3 col-md-3 order-1 content-menu">
           <div class="button_container" id="btn-menu-fix-open">
             <span class="top"></span>
             <span class="middle"></span>
             <span class="bottom"></span>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 order-1 order-sm-2 content-logo">
+        <div class="col-6 col-sm-6 col-md-6 order-2 content-logo">
           <a class="logo-fix text-center" href="<?php echo get_site_url(); ?>">
             <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
           </a>
         </div>
-        <div class="col-4 hidden-desktop order-3">
+        <!--<div class="col-2 hidden-desktop order-3">
           <div class="content-list-categories">
 
             <div class="dropdown">
@@ -88,9 +110,8 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="col-4 col-sm-3 col-md-3 order-4 content-cart">
-
+        </div>-->
+        <div class="col-3 col-sm-3 col-md-3 order-3 content-cart">
           <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
             <span class="qty">
               <span class="header-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
@@ -103,52 +124,48 @@
     </div>
 
   </div>
-  <div class="container bg-white">
-    <div class="row">
-      <div class="col-12 text-center">
+  <div class="container-fluid bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
 
-        <ul class="list-inline list-header-categories">
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              Camisetas
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-              <span class="text">Bermudas</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-              <span class="text">Acessórios</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-              <span class="text">Camisetas</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-              <span class="text">Bermudas</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-              <span class="text">Acessórios</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
-              <i class="fa fa-asterisk" aria-hidden="true"></i>
-            <span class="text">Shorts</span></a>
-          </li>
-        </ul>
+          <ul class="list-inline list-header-categories">
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+                Lançamentos
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+                <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
+                <span class="text">Camisas</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/shorts-e-calsas" class="header-link-category">
+                <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+                <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
+                <span class="text">Bolsas</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+                <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
+                <span class="text">Acessórios</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+                <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
+                <span class="text">Outlet</span></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
