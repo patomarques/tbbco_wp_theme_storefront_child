@@ -1,31 +1,31 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$args = array(
+    'post_type' => 'mosaico_home',
+    'stock' => 1,
+    'posts_per_page' => 12,
+    'orderby' =>'ordem',
+    'order' => 'ASC' );
+$mosaico_slide = new WP_Query( $args ); ?>
 
 <div id="page-home" class="content-site">
     <div class="content">
         <div class="row">
             <div class="col-12">
                 <div class="flex-grid">
-                    <div class="box-internal">
-                        <img src="<?= get_theme_file_uri() ?>/img/home-camisetas.jpg" alt="" class="img-internal">
-                        <div class="border-effect">
-                            <a href="#" class="tag-box">Camisetas</a>
-                        </div>
+                    <?php while ( $mosaico_slide->have_posts() ) : $mosaico_slide->the_post();  ?>
 
-                    </div>
-                    <div class="box-internal">
-                        <img src="<?= get_theme_file_uri() ?>/img/home-shorts.jpg" alt="" class="img-internal">
+                      <div class="box-internal">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="" class="img-internal">
                         <div class="border-effect">
-                            <a href="#" class="tag-box">Shorts</a>
+                          <a href="#" class="tag-box"><?php echo get_the_title(); ?></a>
                         </div>
-                    </div>
-                    <div class="box-internal">
-                        <img src="<?= get_theme_file_uri() ?>/img/home-acessorios.jpg" alt="" class="img-internal">
-                        <div class="border-effect">
-                            <a href="#" class="tag-box">Acessórios</a>
-                        </div>
-                    </div>
+                      </div>
+
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+
                 </div>
-
             </div>
         </div>
 
