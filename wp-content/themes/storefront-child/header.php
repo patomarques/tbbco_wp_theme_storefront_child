@@ -31,26 +31,29 @@
         'post_type' => 'slider_home',
         'stock' => 1,
         'posts_per_page' => 12,
-        'orderby' =>'rand',
-        'order' => 'rand' );
+        'orderby' =>'ordem',
+        'order' => 'ASC' );
     $slider_home = new WP_Query( $args );
   ?>
 
-  <div class="banner-home ">
-    <div id="owl-demo" class="owl-carousel owl-theme">
+  <div class="banner-home">
+
+    <a class="logo" href="<?php echo get_site_url(); ?>">
+      <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-1.png" alt="" class="logo-banner img-responsive">
+    </a>
+
+    <div id="owl-slider-home" class="owl-carousel owl-theme">
 
       <?php while ( $slider_home->have_posts() ) : $slider_home->the_post();  ?>
 
-          <div class="item"><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt=""></div>
+          <div class="item">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="" class="img-responsive">
+          </div>
 
       <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
 
     </div>
-
-    <a class="logo" href="<?php echo get_site_url(); ?>">
-      <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-1.png" alt="" class="logo-banner img-responsive">
-    </a>
 
   </div>
 <?php } ?>
@@ -80,37 +83,6 @@
             <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
           </a>
         </div>
-        <!--<div class="col-2 hidden-desktop order-3">
-          <div class="content-list-categories">
-
-            <div class="dropdown">
-              <a class="dropdown-toggle btn-dropdown-categories" id="dropdownMenu1" data-toggle="dropdown">
-                <i class="fa fa-server fa-3x" aria-hidden="true"></i>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation">
-                  <a class="dropdown-item" href="#">Bermudas</a>
-                </li>
-                <li role="presentation">
-                  <a class="dropdown-item" href="#">Acessórios</a>
-                </li>
-                <li role="presentation">
-                  <a class="dropdown-item" href="#">Camisetas</a>
-                </li>
-                <li role="presentation" class="">
-                  <a class="dropdown-item" href="#">Bermudas</a>
-                </li>
-                <li role="presentation">
-                  <a class="dropdown-item" href="#">Acessórios</a>
-                </li>
-                <li role="presentation">
-                  <a class="dropdown-item" href="#">Shorts</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>-->
         <div class="col-3 col-sm-3 col-md-3 order-3 content-cart">
           <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
             <span class="qty">
@@ -154,7 +126,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+7              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
                 <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
                 <span class="text">Acessórios</span>
               </a>
@@ -186,15 +158,40 @@
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </a>
         <ul class="list-dropdown">
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Camisetas</a></li>
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Bermudas</a></li>
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Acessórios</a></li>
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Bermudas</a></li>
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Acessórios</a></li>
-          <li class="dropdpwn-list-item"><a href="#" class="list-drowpdown-category">Shorts</a></li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Lançamentos</a>
+          </li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Camisas</a>
+          </li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Shorts</a>
+          </li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Bolsas</a>
+          </li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Acessórios</a>
+          </li>
+          <li class="dropdpwn-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Outlet</a>
+          </li>
         </ul>
       </li>
       <li><a href="<?php echo get_site_url(); ?>/contato">Contato</a></li>
+      <li>
+        <ul class="menu-icons">
+          <li class="item-icon">
+            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/user.svg" alt="Minha Conta" class="icon-menu icon-user">
+          </li>
+          <li class="item-icon">
+            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/loupe.svg" alt="Pesquisar" class="icon-menu icon-loupe">
+          </li>
+          <li class="item-icon">
+            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/wishlist.svg" alt="Minha Lista de Desejos" class="icon-menu icon-wishlist">
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </div>

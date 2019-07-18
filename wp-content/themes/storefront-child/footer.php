@@ -53,15 +53,15 @@ $container = get_theme_mod( 'understrap_container_type' );
           <ul class="list-unstyled footer-list-links">
             <li><p class="c-black bold">The Boom Bap Co</p></li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/sobre-nos" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Sobre Nós</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/loja" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Loja</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/contato" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Contato</a>
             </li>
           </ul>
@@ -70,23 +70,23 @@ $container = get_theme_mod( 'understrap_container_type' );
           <ul class="list-unstyled footer-list-links">
             <li><p class="c-black bold">Institucional</p></li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/politica-de-privacidade" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Politica de Privacidade</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/termos-de-uso" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Termos de Uso</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/politica-de-entrega" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Entregas</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/pagamentos" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Pagamentos</a>
             </li>
             <li class="li-effect">
-              <a href="#" class="link">
+              <a href="<?php echo get_site_url(); ?>/trocas-e-devolucoes" class="link">
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> Trocas e Devoluções</a>
             </li>
           </ul>
@@ -95,7 +95,7 @@ $container = get_theme_mod( 'understrap_container_type' );
           <ul class="list-unstyled list-inline list-footer-social-icons">
             <li><p class="c-black bold">Social</p></li>
             <li class="list-inline-item">
-              <a href="#" class="links" data-toggle="tooltip" data-placement="bottom" title="Fale conosco via whatsapp"
+              <a href="https://api.whatsapp.com/send?phone=5581999623374&text=Olá,%20tudo%20bem?%20Estou%20com%20uma%20dúvida,%20poderia%20me%20ajudar.%20:)" class="links" data-toggle="tooltip" data-placement="bottom" title="Fale conosco via whatsapp"
                  target="_blank">
                 <i class="fab fa-whatsapp fa-2x"></i>
               </a>
@@ -107,7 +107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="links" data-toggle="tooltip" data-placement="bottom" title="Envie-nos um email: ola@theboombap.co">
+              <a href="mailto:contato@theboombap.co" class="links" data-toggle="tooltip" data-placement="bottom" title="Envie-nos um email: ola@theboombap.co">
                 <i class="fas fa-feather-alt fa-2x"></i>
               </a>
             </li>

@@ -10,17 +10,26 @@
       }, 3000);
     });*/
 
-    $("#owl-demo").owlCarousel({
+    $("#owl-slider-home").owlCarousel({
       navigation : true,
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem: true,
       pagination: false,
       rewindSpeed: 500,
+      responsiveClass:true,
+      autoplay: true,
+      autoplayTimeout: 3000,
       items : 1,
       loop:true,
       nav:true,
-      autoHeight:true
+      autoWidth: false,
+      autoHeight:true,
+      center: true,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: true,
+      lazyLoad: false
     });
   });
 
