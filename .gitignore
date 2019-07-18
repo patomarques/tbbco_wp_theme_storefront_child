@@ -1,6 +1,7 @@
 html
 wp-admin
 wp-content/languages/*
+wp-content/uploads
 wp-content/plugins/*
 wp-content/themes/storefront
 wp-content/themes/storefront-child/node_modules/
