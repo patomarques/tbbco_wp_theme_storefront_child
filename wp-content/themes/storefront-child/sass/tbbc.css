@@ -115,6 +115,44 @@
     background-color: #d2d2d2 !important;
     opacity: 0.7; }
 
+.add_to_cart_button,
+.product_type_variable {
+  font-size: 16px; }
+  .add_to_cart_button:before,
+  .product_type_variable:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    float: left;
+    content: "\f290";
+    font-weight: 300;
+    margin-right: 10px; }
+
+.yith-wcwl-add-to-wishlist {
+  position: absolute;
+  text-align: center;
+  padding: 8px 27px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+  display: none;
+  font-size: 16px; }
+  .yith-wcwl-add-to-wishlist .yith-wcwl-add-button {
+    background: #000000; }
+  .yith-wcwl-add-to-wishlist:hover {
+    background-color: #ffffff !important; }
+    .yith-wcwl-add-to-wishlist:hover a, .yith-wcwl-add-to-wishlist:hover:before {
+      color: #000000 !important; }
+  .yith-wcwl-add-to-wishlist:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    float: left;
+    content: "\f004";
+    font-weight: 300;
+    margin: 2px 0 0 2px;
+    color: #ffffff; }
+
 .title-section {
   font-size: 2em;
   margin-bottom: 50px;
@@ -876,6 +914,8 @@ a.reset_variations {
     .list-products .product-box:hover .product_type_variable:hover {
       background-color: #000000;
       color: #ffffff; }
+  .list-products .product-box:hover .yith-wcwl-add-to-wishlist {
+    display: inline-block; }
   .list-products .product-box .title-product {
     display: block;
     text-align: center;
@@ -924,9 +964,11 @@ a.reset_variations {
 
 .equalHMV {
   position: relative; }
-  .equalHMV:hover .add-to-cart-container,
-  .equalHMV:hover .yith-wcwl-add-to-wishlist {
-    display: inline-block; }
+  .equalHMV:hover {
+    /*.add-to-cart-container,
+    .yith-wcwl-add-to-wishlist{
+      display: inline-block !important;
+    }*/ }
 
 .equalHMWrap {
   justify-content: space-between; }
@@ -934,23 +976,8 @@ a.reset_variations {
 .equalHMVWrap {
   flex-wrap: wrap; }
 
-.yith-wcwl-add-to-wishlist {
-  position: absolute;
-  text-align: center;
-  background: #000000;
-  padding: 8px 27px;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin-top: 15px;
-  display: none; }
-  .yith-wcwl-add-to-wishlist:hover {
-    background-color: #ffffff;
-    color: #000000; }
-
 .yith-wcwl-add-button {
-  width: 60px;
+  min-width: 94px;
   height: 28px; }
 
 .yith-wcwl-add-to-wishlist a {

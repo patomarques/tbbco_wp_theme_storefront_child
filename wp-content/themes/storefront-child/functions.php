@@ -94,7 +94,7 @@ add_filter( 'woocommerce_product_add_to_cart_text', 'woo_custom_product_add_to_c
 
 function woo_custom_product_add_to_cart_text_custom() {
 
-    return __( 'Comprar', 'woocommerce' );
+    return __( 'Adicionar', 'woocommerce' );
 
 }
 

@@ -12,3 +12,52 @@
 
   }
 }
+
+.add_to_cart_button,
+.product_type_variable{
+  font-size: 16px;
+  &:before{
+    display: inline-block;
+    font-family: FontAwesome;
+    float: left;
+    content: "\f290";
+    font-weight: 300;
+    margin-right: 10px;
+  }
+}
+
+.yith-wcwl-add-to-wishlist{
+  position: absolute;
+  text-align: center;
+  padding: 8px 27px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+  display: none;
+  font-size: 16px;
+
+  .yith-wcwl-add-button{
+    background: $c-black;
+  }
+
+  &:hover{
+    background-color: $c-white !important;
+
+    a,
+    &:before{
+      color: $c-black !important;
+    }
+  }
+
+  &:before{
+    display: inline-block;
+    font-family: FontAwesome;
+    float: left;
+    content: "\f004";
+    font-weight: 300;
+    margin: 2px 0 0 2px;
+    color: $c-white;
+  }
+}
