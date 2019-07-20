@@ -70,6 +70,7 @@ $mosaico_slide = new WP_Query( $args ); ?>
                                     </div>
 
                                     <?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+                                    <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
 
                                 </div>
                             </div>
