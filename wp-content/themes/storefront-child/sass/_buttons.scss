@@ -38,26 +38,32 @@
   display: none;
   font-size: 16px;
 
-  .yith-wcwl-add-button{
-    background: $c-black;
-  }
-
   &:hover{
-    background-color: $c-white !important;
-
     a,
     &:before{
       color: $c-black !important;
     }
   }
 
+  .yith-wcwl-wishlistexistsbrowse{
+    a{
+      display: none;
+    }
+  }
+
+  .yith-wcwl-add-button{
+
+  }
+}
+
+.add_to_wishlist{
   &:before{
     display: inline-block;
     font-family: FontAwesome;
     float: left;
     content: "\f004";
     font-weight: 300;
-    margin: 2px 0 0 2px;
+    margin: 1px 12px 0 0;
     color: $c-white;
   }
 }

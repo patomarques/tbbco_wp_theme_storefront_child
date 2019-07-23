@@ -48,12 +48,13 @@
     }
 
     .price{
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: center;
       padding-bottom: 5px;
       display: block;
       color: $c-black;
       font-weight: 400;
+      line-height: 10px;
 
       .woocommerce-Price-currencySymbol{
         padding-right: 5px;
@@ -102,16 +103,7 @@
 }
 
 .equalHMV {
-  //background-color: #d1d1d1;
   position: relative;
-
-  &:hover{
-
-    /*.add-to-cart-container,
-    .yith-wcwl-add-to-wishlist{
-      display: inline-block !important;
-    }*/
-  }
 }
 
 .equalHMWrap {
@@ -122,13 +114,20 @@
   flex-wrap: wrap;
 }
 
-
 .yith-wcwl-add-button{
   min-width: 94px;
   height: 28px;
 }
+
 .yith-wcwl-add-to-wishlist a{
   color: $c-white;
+}
+
+.yith-wcwl-wishlistaddedbrowse{
+  .feedback,
+  a{
+    display: none;
+  }
 }
 @media (min-width: 250px) {
   .equalHMV {
@@ -169,7 +168,7 @@
 
   .equalHMV:nth-of-type(2n),
   .equalHMV:nth-of-type(2n+1) {
-    margin: 0 1% 0;
+    margin: 0 1% 1%;
   }
 
   .equalHMV:nth-of-type(3n) {
