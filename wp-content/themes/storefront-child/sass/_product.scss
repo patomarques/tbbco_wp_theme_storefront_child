@@ -114,13 +114,49 @@
   flex-wrap: wrap;
 }
 
-.yith-wcwl-add-button{
-  min-width: 94px;
-  height: 28px;
+.yith-wcwl-add-to-wishlist{
+  .yith-wcwl-add-button{
+    background-color: $c-black;
+    min-width: 149px;
+    height: 43px;
+    padding: 8px 5px 10px 15px;
+    @extend .trans;
+    border: 2px solid $c-black;
+
+    &:hover{
+      background-color: $c-white;
+      border: 2px solid $c-black;
+      color: $c-black;
+      a.add_to_wishlist{
+        &:before{
+          color: $c-black;
+        }
+      }
+    }
+  }
 }
+
 
 .yith-wcwl-add-to-wishlist a{
   color: $c-white;
+}
+
+.yith-wcwl-wishlistexistsbrowse,
+.yith-wcwl-wishlistaddedbrowse{
+    &:before{
+      display: inline-block;
+      font-family: FontAwesome;
+      float: left;
+      content: "\f004";
+      font-weight: 300;
+      margin: 1px 0 0 15px;
+      color: $c-white;
+      font-size: 20px;
+      background: $c-black;
+      padding: 5px 10px 2px;
+      border-radius: 50%;
+      border: 2px solid $c-black;
+    }
 }
 
 .yith-wcwl-wishlistaddedbrowse{
@@ -129,6 +165,7 @@
     display: none;
   }
 }
+
 @media (min-width: 250px) {
   .equalHMV {
     width: 100%;

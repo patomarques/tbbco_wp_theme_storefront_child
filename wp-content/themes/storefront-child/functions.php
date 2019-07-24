@@ -145,3 +145,9 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
+
+add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_display_yith_wishlist_loop', 97 );
+
+function bbloomer_display_yith_wishlist_loop() {
+    echo do_shortcode( "[yith_wcwl_add_to_wishlist]" );
+}

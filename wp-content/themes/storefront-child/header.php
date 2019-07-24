@@ -126,7 +126,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-7              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
+              <a href="<?php echo get_site_url(); ?>/" class="header-link-category">
                 <!--<i class="fas fa-circle" aria-hidden="true"></i>-->
                 <span class="text">Acessórios</span>
               </a>
