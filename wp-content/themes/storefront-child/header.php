@@ -84,13 +84,7 @@
           </a>
         </div>
         <div class="col-3 col-sm-3 col-md-3 order-3 content-cart">
-          <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
-            <span class="qty">
-              <span class="header-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-            </span>
-            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/shopping-bags.svg" alt="Carrinho"
-                 class="icon icon-cart">
-          </a>
+            <?php get_template_part( 'template-part/header-cart'); ?>
         </div>
       </div>
     </div>
@@ -144,37 +138,49 @@
 </header>
 
 <div class="overlay" id="overlay">
-  <div class="button_container" id="btn-menu-fix-close">
-    <span class="top"></span>
-    <span class="middle"></span>
-    <span class="bottom"></span>
+  <div class="mobile-col1">
+    <div class="button_container" id="btn-menu-fix-close">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
   </div>
+  <div class="mobile-col2 content-logo">
+    <a class="logo-fix text-center" href="<?php echo get_site_url(); ?>">
+      <img src="<?php echo get_theme_file_uri(); ?>/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
+    </a>
+  </div>
+  <div class="mobile-col3 content-cart">
+      <?php get_template_part( 'template-part/header-cart'); ?>
+  </div>
+
+
   <nav class="overlay-menu">
     <ul class="mobile-menu">
-      <li class="mobile-menu-item"><a href="<?php echo get_site_url(); ?>">Início</a></li>
+      <!--<li class="mobile-menu-item"><a href="<?php /*echo get_site_url(); */?>">Início</a></li>-->
       <li class="mobile-menu-item"><a href="<?php echo get_site_url(); ?>/sobre">Sobre</a></li>
       <li class="mobile-menu-item dropdown-custom">
-        <a href="<?php //echo get_site_url(); ?>/loja" class="">Loja
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        <a href="<?php echo get_site_url(); ?>/loja" class="">Loja
+          <i class="fa fa-caret-down d-none d-md-block" aria-hidden="true"></i>
         </a>
         <ul class="list-dropdown">
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Lançamentos</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Lançamentos</a>
           </li>
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Camisas</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Camisas</a>
           </li>
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Shorts</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Shorts</a>
           </li>
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Bolsas</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Bolsas</a>
           </li>
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Acessórios</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Acessórios</a>
           </li>
-          <li class="dropdpwn-list-item">
-            <a href="<?php echo get_site_url(); ?>/" class="list-drowpdown-category">Outlet</a>
+          <li class="dropdown-list-item">
+            <a href="<?php echo get_site_url(); ?>/" class="list-dropdown-category">Outlet</a>
           </li>
         </ul>
       </li>
@@ -183,10 +189,11 @@
   </nav>
 
   <div class="mobile-buttons">
-    <ul class="list-inline menu-icons">
+    <ul class="list-inline mobile-menu-icons menu-icons">
       <li class="item-icon">
-        <a href="<?php echo get_site_url(); ?>/minha-conta" class="btn-menu-icon"></a>
-        <img src="<?php echo get_theme_file_uri(); ?>/img/icons/user.svg" alt="Minha Conta" class="svg icon-menu icon-user">
+        <a href="<?php echo get_site_url(); ?>/minha-conta" class="btn-menu-icon">
+          <img src="<?php echo get_theme_file_uri(); ?>/img/icons/user.svg" alt="Minha Conta" class="svg icon-menu icon-user">
+        </a>
       </li>
       <li class="item-icon">
         <form action="" class="form-search">
@@ -195,8 +202,9 @@
         </form>
       </li>
       <li class="item-icon">
-        <a href="<?php echo get_site_url(); ?>/gostei" class="btn-menu-icon"></a>
-        <img src="<?php echo get_theme_file_uri(); ?>/img/icons/wishlist.svg" alt="Minha Lista de Desejos" class="svg icon-menu icon-wishlist">
+        <a href="<?php echo get_site_url(); ?>/gostei" class="btn-menu-icon">
+          <img src="<?php echo get_theme_file_uri(); ?>/img/icons/wishlist.svg" alt="Minha Lista de Desejos" class="svg icon-menu icon-wishlist">
+        </a>
       </li>
     </ul>
   </div>
