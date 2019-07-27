@@ -10,9 +10,16 @@
       }, 3000);
     });*/
 
-   /*
-    * Replace all SVG images with inline SVG
-    */
+   /* Menu Mobile Effect after click */
+   $('.mobile-menu-icons li:nth-child(1)').on('click', function(){
+    $('body').addClass('loading');
+   });
+
+   $('.mobile-menu-icons li:nth-child(3)').on('click', function(){
+    $('body').addClass('loading');
+   });
+
+   /* Replace all SVG images with inline SVG */
    $('img.svg').each(function () {
     var $img = jQuery(this);
     var imgID = $img.attr('id');
@@ -65,11 +72,12 @@
     });
   });
 
+  /* Bootstrap Tooltip */
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
 
-  //FLEX GRID FAKE HOVER
+  //Flex Grid Fake Hover
   var el_box_img = $('.border-effect');
   el_box_img.on('hover', function () {
     var el = $(this).closest('.box-internal').find('img.img-internal');

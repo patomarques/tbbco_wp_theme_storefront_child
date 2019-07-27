@@ -252,7 +252,7 @@
     font-weight: 400;
     text-align: center;
   }
-  ul {
+  ul.mobile-menu {
     list-style: none;
     padding: 0;
     margin: 0 auto;
@@ -260,7 +260,7 @@
     position: relative;
     height: 100%;
 
-    li {
+    li.mobile-menu-item {
       display: block;
       //height: 25%;
       height: auto;
@@ -274,7 +274,6 @@
         color: $c-white;
         text-decoration: none;
         overflow: hidden;
-        font-size: 3rem;
 
         &:hover:after,
         &:focus:after,
@@ -412,7 +411,7 @@
   @extend .trans;
   text-align: left;
 
-  .dropdpwn-list-item{
+  .dropdown-list-item{
     padding: 5px 15px;
 
     a{
@@ -522,8 +521,29 @@
     }
   }
 
-  .overlay.open .button_container.active{
-    margin: 20px;
+  .overlay.open {
+    .button_container.active{
+      top: 0;
+      margin: 20px;
+    }
+
+    .content-cart{
+      top: 0;
+      margin: 0 20px;
+      position: absolute;
+      right: 0;
+      font-weight: 700;
+    }
+
+    .logo-fix{
+      top: 0;
+      position: relative;
+
+      img{
+        max-width: 100px;
+        margin: 20px auto 0;
+      }
+    }
   }
 }
 
@@ -537,11 +557,13 @@
 
   .menu-icons{
     width: 100%;
+    margin: 0;
+    padding: 0;
 
     li{
       height: auto;
       width: calc((100% / 3) - 3px);
-      padding: 10px;
+      padding: 15px;
 
       &:nth-child(1),
       &:nth-child(2){
@@ -556,10 +578,11 @@
   .mobile-menu{
     .mobile-menu-item{
       a{
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
     }
   }
+
   .banner-home{
     .logo{
       img{
@@ -596,7 +619,7 @@
   }
 }
 
-@media (min-width: 425px) {
+@media (min-width: $min-xs) {
   .menu-top{
     .logo-fix-img{
       margin: -3px auto 0;
@@ -613,7 +636,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: $min-sm) {
   .list-header-categories{
     display: block;
   }
@@ -626,10 +649,18 @@
   .hidden-desktop{
     display: none;
   }
+
+  .mobile-menu{
+    .mobile-menu-item{
+      a{
+        font-size: 3rem;
+      }
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@media (min-width: $min-md) {
   .banner-home{
     .logo{
       img{
@@ -646,7 +677,7 @@
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: $min-lg) {
   .menu-top{
     .logo-fix{
       margin: 15px auto 0;
