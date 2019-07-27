@@ -110,19 +110,44 @@
     }
   }
 }
+
+
 /**
 ** @mediaqueries (responsive)
  */
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
-@media (max-width: 450px) {
+@media (min-width: $min-xs-minor) {
   .footer-copyfight{
     font-size: 12px;
   }
-}
 
-@media (min-width: 451px) {
+  .box-icon{
+    margin: 0 0 30px;
+
+    .text-icon{
+      max-width: 160px;
+    }
+  }
+
+  .footer-list-links{
+    margin-bottom: 30px;
+  }
+
   .footer-copyfight{
     font-size: 14px;
   }
+}
+
+@media (min-width: $min-sm) {
+  .box-icon{
+    .text-icon{
+      max-width: inherit;
+    }
+
+    .icon-footer{
+      margin:0 0 10px;
+    }
+  }
+
 }

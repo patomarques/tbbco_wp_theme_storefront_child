@@ -150,10 +150,10 @@
     <span class="bottom"></span>
   </div>
   <nav class="overlay-menu">
-    <ul>
-      <li><a href="<?php echo get_site_url(); ?>">Início</a></li>
-      <li><a href="<?php echo get_site_url(); ?>/sobre">Sobre</a></li>
-      <li class="dropdown-custom">
+    <ul class="mobile-menu">
+      <li class="mobile-menu-item"><a href="<?php echo get_site_url(); ?>">Início</a></li>
+      <li class="mobile-menu-item"><a href="<?php echo get_site_url(); ?>/sobre">Sobre</a></li>
+      <li class="mobile-menu-item dropdown-custom">
         <a href="<?php //echo get_site_url(); ?>/loja" class="">Loja
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </a>
@@ -178,22 +178,28 @@
           </li>
         </ul>
       </li>
-      <li><a href="<?php echo get_site_url(); ?>/contato">Contato</a></li>
-      <li>
-        <ul class="menu-icons">
-          <li class="item-icon">
-            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/user.svg" alt="Minha Conta" class="icon-menu icon-user">
-          </li>
-          <li class="item-icon">
-            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/loupe.svg" alt="Pesquisar" class="icon-menu icon-loupe">
-          </li>
-          <li class="item-icon">
-            <img src="<?php echo get_theme_file_uri(); ?>/img/icons/wishlist.svg" alt="Minha Lista de Desejos" class="icon-menu icon-wishlist">
-          </li>
-        </ul>
-      </li>
+      <li class="mobile-menu-item"><a href="<?php echo get_site_url(); ?>/contato">Contato</a></li>
     </ul>
   </nav>
+
+  <div class="mobile-buttons">
+    <ul class="list-inline menu-icons">
+      <li class="item-icon">
+        <a href="<?php echo get_site_url(); ?>/minha-conta" class="btn-menu-icon"></a>
+        <img src="<?php echo get_theme_file_uri(); ?>/img/icons/user.svg" alt="Minha Conta" class="svg icon-menu icon-user">
+      </li>
+      <li class="item-icon">
+        <form action="" class="form-search">
+          <!--<input type="text" class="input-custom input-search hidden" placeholder="Digite o que procura...">-->
+          <img src="<?php echo get_theme_file_uri(); ?>/img/icons/loupe.svg" alt="Pesquisar" class="svg icon-menu icon-loupe">  
+        </form>
+      </li>
+      <li class="item-icon">
+        <a href="<?php echo get_site_url(); ?>/gostei" class="btn-menu-icon"></a>
+        <img src="<?php echo get_theme_file_uri(); ?>/img/icons/wishlist.svg" alt="Minha Lista de Desejos" class="svg icon-menu icon-wishlist">
+      </li>
+    </ul>
+  </div>
 </div>
 
 <?php //do_action( 'storefront_before_site' ); ?>

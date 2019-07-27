@@ -11,9 +11,18 @@ $c-gray-f7: #b2b2b2;
 
 /* Menu Variables */
 $color-link: #FFF;
-$button-height: 27px;
-$button-width: 35px;
 
+$button-height: 24px;
+$button-width: 30px;
+
+/* MEDIA QUERIES VARIABLES */
+$min-xs-minor: 320px;
+$min-xs: 450px;
+$min-sm: 768px;
+$min-md: 992px;
+$min-lg: 1200px;
+
+/* { VARIABLES } */
 /* background-colors */
 .bg-black{
   background-color: $c-black;

@@ -56,16 +56,23 @@
 .menu-icons{
   .item-icon{
     display: inline-block !important;
+    text-align: center;
+  }
+
+  .icon-menu{
+
   }
 
   .icon-wishlist{
-    font-size: 80px;
+    width: 40px;
+    margin-top: -9px;
   }
   .icon-user{
-    font-size: 50px;
+    width: 40px;
   }
   .icon-loupe{
-    font-size: 40px;
+    width: 34px;
+    margin-top: -6px;
   }
 }
 
@@ -475,6 +482,10 @@
   }
 }
 
+.form-search{
+  margin: 0;
+  padding: 0;
+}
 /**
 ** @mediaqueries (responsive)
  */
@@ -496,7 +507,7 @@
 
   .content-menu{
     .button_container{
-      margin: 20px 5px 14px 5px;
+      margin: 19px 5px 14px 5px;
     }
   }
 
@@ -514,11 +525,41 @@
   .overlay.open .button_container.active{
     margin: 20px;
   }
-
 }
 
+.mobile-buttons{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 97;
+  max-height: 80px;
+  padding-bottom: 5px;
 
-@media (min-width: 320px) {
+  .menu-icons{
+    width: 100%;
+
+    li{
+      height: auto;
+      width: calc((100% / 3) - 3px);
+      padding: 10px;
+
+      &:nth-child(1),
+      &:nth-child(2){
+
+      }
+    }
+  }
+}
+
+@media (min-width: $min-xs-minor) {
+
+  .mobile-menu{
+    .mobile-menu-item{
+      a{
+        font-size: 2rem;
+      }
+    }
+  }
   .banner-home{
     .logo{
       img{

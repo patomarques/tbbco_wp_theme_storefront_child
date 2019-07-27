@@ -1,0 +1,18 @@
+.input-custom{
+  padding: 10px 20px;
+  font-family: $ff-default;
+
+  @extend .trans;
+}
+
+.input-search{
+  border: 2px solid $c-black;
+  width: 1%;
+
+  &:hover{
+    border: 2px solid $c-gray-light;
+    width: 100%;
+  }
+
+  @include border-radius(50px);
+}

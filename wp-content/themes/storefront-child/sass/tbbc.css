@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /* Menu Variables */
+/* MEDIA QUERIES VARIABLES */
+/* { VARIABLES } */
 /* background-colors */
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 .bg-black {
@@ -34,7 +36,7 @@
     left: 0; } }
 
 /* implements */
-.trans, .owl-theme .owl-nav .owl-prev,
+.trans, .input-custom, .owl-theme .owl-nav .owl-prev,
 .owl-theme .owl-nav .owl-next, .logo-fix img, .button_container, .list-dropdown, .flex-grid .box-internal, a, .add-to-cart-container, .yith-wcwl-add-to-wishlist .yith-wcwl-add-button {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -98,10 +100,11 @@
   .icon-cart svg {
     background-color: #fff !important; }
 
-.icon-menu {
-  filter: invert(1); }
-  .icon-menu svg {
-    background-color: #fff !important; }
+.icon-menu path {
+  fill: white; }
+
+.icon-menu:hover path {
+  fill: #d2d2d269; }
 
 .btn-outline-primary,
 .wpcf7 input[type=submit] {
@@ -159,6 +162,20 @@
   margin: 1px 0 0 15px;
   color: #ffffff; }
 
+.input-custom {
+  padding: 10px 20px;
+  font-family: "Novecentosanswide-Normal"; }
+
+.input-search {
+  border: 2px solid #000000;
+  width: 1%;
+  -webkit-border-radius: 50px !important;
+  -moz-border-radius: 50px !important;
+  border-radius: 50px !important; }
+  .input-search:hover {
+    border: 2px solid #d2d2d269;
+    width: 100%; }
+
 .title-section {
   font-size: 2em;
   margin-bottom: 50px;
@@ -176,7 +193,7 @@
     position: absolute; }
 
 .entry-header {
-  padding: 0 0 30px; }
+  padding: 20px 0 40px; }
 
 #owl-slider-home .item {
   height: 85vh;
@@ -217,16 +234,19 @@
   margin-top: -30px; }
 
 .menu-icons .item-icon {
-  display: inline-block !important; }
+  display: inline-block !important;
+  text-align: center; }
 
 .menu-icons .icon-wishlist {
-  font-size: 80px; }
+  width: 40px;
+  margin-top: -9px; }
 
 .menu-icons .icon-user {
-  font-size: 50px; }
+  width: 40px; }
 
 .menu-icons .icon-loupe {
-  font-size: 40px; }
+  width: 34px;
+  margin-top: -6px; }
 
 .banner-home {
   position: relative;
@@ -273,8 +293,8 @@
 /* menu */
 .button_container {
   position: relative;
-  height: 27px;
-  width: 35px;
+  height: 24px;
+  width: 30px;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
@@ -506,6 +526,10 @@
   .btn-dropdown-categories .cart-link {
     text-align: right; }
 
+.form-search {
+  margin: 0;
+  padding: 0; }
+
 /**
 ** @mediaqueries (responsive)
  */
@@ -520,7 +544,7 @@
     font-size: 12px;
     text-align: center; }
   .content-menu .button_container {
-    margin: 20px 5px 14px 5px; }
+    margin: 19px 5px 14px 5px; }
   .content-cart .cart-link {
     text-align: center;
     display: block;
@@ -531,7 +555,23 @@
   .overlay.open .button_container.active {
     margin: 20px; } }
 
+.mobile-buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 97;
+  max-height: 80px;
+  padding-bottom: 5px; }
+  .mobile-buttons .menu-icons {
+    width: 100%; }
+    .mobile-buttons .menu-icons li {
+      height: auto;
+      width: calc((100% / 3) - 3px);
+      padding: 10px; }
+
 @media (min-width: 320px) {
+  .mobile-menu .mobile-menu-item a {
+    font-size: 2rem; }
   .banner-home .logo img {
     max-height: 150px; }
   .menu-top .logo-fix {
@@ -769,13 +809,23 @@
  */
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
-@media (max-width: 450px) {
+@media (min-width: 320px) {
   .footer-copyfight {
-    font-size: 12px; } }
-
-@media (min-width: 451px) {
+    font-size: 12px; }
+  .box-icon {
+    margin: 0 0 30px; }
+    .box-icon .text-icon {
+      max-width: 160px; }
+  .footer-list-links {
+    margin-bottom: 30px; }
   .footer-copyfight {
     font-size: 14px; } }
+
+@media (min-width: 768px) {
+  .box-icon .text-icon {
+    max-width: inherit; }
+  .box-icon .icon-footer {
+    margin: 0 0 10px; } }
 
 ::-webkit-scrollbar {
   width: 0.8em;

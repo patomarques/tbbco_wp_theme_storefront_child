@@ -20,9 +20,20 @@
 }
 
 .icon-menu{
-  filter: invert(1);
+  //filter: invert(1);
 
   svg{
-    background-color: #fff !important;
+    //background-color: #fff !important;
+  }
+}
+
+.icon-menu {
+  path{
+    fill: white;
+  }
+  &:hover{
+    path{
+      fill: $c-gray-light;
+    }
   }
 }
